@@ -23,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ListVideosActivity"></activity>
+        <activity android:name=".ListPhotoAndVideosActivity"></activity>
+        <activity android:name=".ListVideosActivity" />
         <activity android:name=".MenuActivity" />
         <activity android:name=".PhotoPickerActivity" />
         <activity android:name=".ListPhotosActivity" />

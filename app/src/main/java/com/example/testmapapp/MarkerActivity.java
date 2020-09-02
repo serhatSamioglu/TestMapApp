@@ -54,9 +54,11 @@ public class MarkerActivity extends FragmentActivity implements
 
     AlertDialog VideoURLAlertDialog;
     AlertDialog NameAlertDialog;
+    AlertDialog DetailAlertDialog;
 
     LatLng tempLatLng;
     String tempLocationName;
+    String tempDetail;
     Integer tempPhotoCount = 0;
     Integer tempVideoCount = 0;
     Uri imageData;
@@ -85,7 +87,7 @@ public class MarkerActivity extends FragmentActivity implements
         checkLocationCount();
         handleVideoURLAlertDialog();
         handleNameAlertDialog();
-
+        handleDetailAlertDialog();
     }
 
     /** Called when the map is ready. */
@@ -165,7 +167,7 @@ public class MarkerActivity extends FragmentActivity implements
 
     public void confirmButton(View view){
 
-        Location location = new Location(tempLatLng.latitude,tempLatLng.longitude,locationCount,tempLocationName);
+        Location location = new Location(tempLatLng.latitude,tempLatLng.longitude,locationCount,tempLocationName,tempDetail);
         myRef.child("Locations").child(locationCount.toString()).setValue(location);
         finish();
 
@@ -191,6 +193,10 @@ public class MarkerActivity extends FragmentActivity implements
         Intent intent = new Intent(getApplicationContext(), PhotoPickerActivity.class);
         intent.putExtra("locationCount",locationCount);
         startActivity(intent);
+    }
+
+    public void locationDetailTabbed(View view) {
+        DetailAlertDialog.show();
     }
 
     public void checkPermissions() {
@@ -323,4 +329,33 @@ public class MarkerActivity extends FragmentActivity implements
 
         NameAlertDialog = builder.create();
     }
+
+    public void handleDetailAlertDialog(){
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Add a detail");
+
+        final EditText nameInputView = new EditText(this);
+        nameInputView.setHint("Tap to write");
+        builder.setView(nameInputView);
+
+        builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                tempDetail = nameInputView.getText().toString();
+                nameInputView.getText().clear();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                nameInputView.getText().clear();
+                dialog.dismiss();
+            }
+        });
+
+        DetailAlertDialog = builder.create();
+    }
+
 }

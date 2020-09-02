@@ -27,7 +27,7 @@
         android:layout_marginBottom="88dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="yazmak için dokunun"
         app:layout_constraintBottom_toTopOf="@+id/pickedPhotoConfirmButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

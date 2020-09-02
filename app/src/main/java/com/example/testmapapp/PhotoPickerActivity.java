@@ -53,6 +53,8 @@ public class PhotoPickerActivity extends AppCompatActivity {
         pickedPhoto = findViewById(R.id.pickedPhoto);
         pickedPhotoDetails = findViewById(R.id.pickedPhotoDetails);
 
+        pickedPhoto.setImageResource(R.drawable.touch_app_24);
+
         pickedPhoto.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

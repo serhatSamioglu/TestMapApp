@@ -30,7 +30,7 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void menuPhotosTabbed(View view){
-        Intent intent = new Intent(getApplicationContext(),ListPhotosActivity.class);
+        Intent intent = new Intent(getApplicationContext(),ListPhotoAndVideosActivity.class);
         intent.putExtra("tag",tag);
         intent.putExtra("name",name);
         startActivity(intent);

@@ -17,7 +17,7 @@
 
     <Button
         android:id="@+id/openStorageButton"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="Fotoğraf yükle"
         android:textSize="11sp"
@@ -27,24 +27,32 @@
 
     <Button
         android:id="@+id/videoAlertButton"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
-        android:layout_marginStart="30dp"
+        android:layout_marginStart="5dp"
         android:text="Video yükle"
         android:onClick="openAlertTabbed"
         app:layout_constraintBottom_toTopOf="@+id/confirmLocation"
         app:layout_constraintStart_toEndOf="@+id/openStorageButton"/>
 
     <Button
+        android:id="@+id/locationDetailButton"
+        android:layout_width="100dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="5dp"
+        android:text="Açıklama ekle"
+        android:onClick="locationDetailTabbed"
+        app:layout_constraintBottom_toTopOf="@+id/confirmLocation"
+        app:layout_constraintStart_toEndOf="@+id/videoAlertButton"/>
+
+    <Button
         android:id="@+id/nameAlertButton"
-        android:layout_width="120dp"
+        android:layout_width="100dp"
         android:layout_height="70dp"
         android:text="Ad belirle"
         android:onClick="openNameAlertTabbed"
         app:layout_constraintBottom_toTopOf="@+id/confirmLocation"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-
 
     <fragment
         android:id="@+id/google_map3"

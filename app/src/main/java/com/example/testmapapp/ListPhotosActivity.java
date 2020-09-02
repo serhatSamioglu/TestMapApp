@@ -57,7 +57,6 @@ public class ListPhotosActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_photos);
-        setTitle(name);
 
         Bundle bundle = getIntent().getExtras();
         if(bundle != null){
@@ -65,6 +64,8 @@ public class ListPhotosActivity extends AppCompatActivity {
             name = bundle.getString("name");
 
         }
+        setTitle(name);
+
 
         listPhotoImageView = findViewById(R.id.listPhotoImageView);
         listPhotoTextView = findViewById(R.id.listPhotoTextView);

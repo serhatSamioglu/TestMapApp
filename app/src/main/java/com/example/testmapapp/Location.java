@@ -5,12 +5,14 @@ public class Location {
     double longitude;
     Integer id;
     String locationName;
+    String locationDetail;
 
-    public Location(double latitude, double longitude, Integer id, String locationName) {
+    public Location(double latitude, double longitude, Integer id, String locationName, String locationDetail) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.id = id;
         this.locationName = locationName;
+        this.locationDetail = locationDetail;
     }
 
     public Location(){
@@ -47,5 +49,13 @@ public class Location {
 
     public void setLocationName(String locationName) {
         this.locationName = locationName;
+    }
+
+    public String getLocationDetail() {
+        return locationDetail;
+    }
+
+    public void setLocationDetail(String locationDetail) {
+        this.locationDetail = locationDetail;
     }
 }

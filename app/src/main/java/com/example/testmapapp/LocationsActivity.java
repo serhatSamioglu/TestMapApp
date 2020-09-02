@@ -121,7 +121,7 @@ public class LocationsActivity extends FragmentActivity implements OnMapReadyCal
     }
 
     public void selectPlacedButtonTabbed(View view){
-        Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+        Intent intent = new Intent(getApplicationContext(),ListPhotoAndVideosActivity.class);
         intent.putExtra("tag",tempMarker.getTag().toString());
         intent.putExtra("name",tempMarker.getTitle());
         startActivity(intent);
